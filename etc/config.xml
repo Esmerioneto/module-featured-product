@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Esmerio Neto
+ *
+ * @category Egsn
+ * @package Egsn_FeaturedProduct
+ * @copyright Copyright (c) 2026 Esmerio Neto.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <egsn_featuredproduct>
+            <general>
+                <enabled>0</enabled>
+                <sku/>
+                <refresh_interval>10</refresh_interval>
+            </general>
+        </egsn_featuredproduct>
+    </default>
+</config>

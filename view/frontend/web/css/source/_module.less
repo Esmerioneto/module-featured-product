@@ -1,0 +1,71 @@
+// Esmerio Neto
+// @category Egsn
+// @package Egsn_FeaturedProduct
+// @copyright Copyright (c) 2026 Esmerio Neto.
+
+& when (@media-common = true) {
+    .egsn-featured-product {
+        box-sizing: border-box;
+        margin-bottom: @indent__l;
+        width: 100%;
+
+        &__link {
+            border: 1px solid @border-color__base;
+            box-sizing: border-box;
+            color: @text__color;
+            display: flex;
+            flex-direction: column;
+            gap: @indent__base;
+            padding: @indent__base;
+            width: 100%;
+
+            &:hover,
+            &:focus {
+                border-color: @link__color;
+                color: @text__color;
+                text-decoration: none;
+            }
+        }
+
+        &__image {
+            text-align: center;
+
+            .product-image-container {
+                max-width: 100%;
+            }
+        }
+
+        &__details {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            gap: @indent__s;
+            justify-content: center;
+        }
+
+        &__name {
+            font-size: @font-size__xl;
+            font-weight: @font-weight__semibold;
+        }
+
+        &__price .price {
+            font-size: @font-size__l;
+            font-weight: @font-weight__bold;
+        }
+
+        &__stock-qty {
+            font-weight: @font-weight__bold;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .egsn-featured-product__link {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .egsn-featured-product__image {
+        flex: 0 0 auto;
+    }
+}

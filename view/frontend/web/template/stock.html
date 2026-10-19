@@ -1,0 +1,23 @@
+<!--
+/**
+ * Esmerio Neto
+ *
+ * @category Egsn
+ * @package Egsn_FeaturedProduct
+ * @copyright Copyright (c) 2026 Esmerio Neto.
+ */
+-->
+<span class="egsn-featured-product__stock-label" translate="'Available for sale'"></span>:
+<span class="egsn-featured-product__stock-qty" aria-live="polite">
+    <!-- ko if: loading -->
+    <span class="egsn-featured-product__stock-loading" translate="'Loading...'"></span>
+    <!-- /ko -->
+    <!-- ko ifnot: loading -->
+    <!-- ko if: isAvailable() -->
+    <span text="qty"></span>
+    <!-- /ko -->
+    <!-- ko ifnot: isAvailable() -->
+    <span translate="'Unavailable'"></span>
+    <!-- /ko -->
+    <!-- /ko -->
+</span>

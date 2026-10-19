@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Esmerio Neto
+ *
+ * @category Egsn
+ * @package Egsn_FeaturedProduct
+ * @copyright Copyright (c) 2026 Esmerio Neto.
+ */
+
+/** @var \Egsn\FeaturedProduct\Block\FeaturedProduct $block */
+/** @var \Magento\Framework\Escaper $escaper */
+
+$product = $block->getProduct();
+$componentName = $block->getStockComponentName();
+?>
+<div class="egsn-featured-product" id="egsn-featured-product">
+    <a class="egsn-featured-product__link" href="<?= $escaper->escapeUrl($product->getProductUrl()) ?>">
+        <div class="egsn-featured-product__image">
+            <?= /* @noEscape */ $block->getImageHtml($product) ?>
+        </div>
+        <div class="egsn-featured-product__details">
+            <strong class="egsn-featured-product__name"><?= $escaper->escapeHtml($product->getName()) ?></strong>
+            <div class="egsn-featured-product__price">
+                <?= /* @noEscape */ $block->getPriceHtml($product) ?>
+            </div>
+            <div class="egsn-featured-product__stock"
+                 data-bind="scope: '<?= $escaper->escapeJs($componentName) ?>'">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+            </div>
+        </div>
+    </a>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#egsn-featured-product": {
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+        }
+    }
+</script>
